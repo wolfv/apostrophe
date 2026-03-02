@@ -164,21 +164,30 @@ class Application(Adw.Application):
                                         not window.did_change, self.get_main_windows()))
         for i, file in enumerate(files):
             if not file.query_exists(None):
-                LOGGER.warning(f"{file.get_path()} doesn't exist")
+                LOGGER.warning("%s doesn't exist", file.get_uri())
                 continue
 
             c = False
             for window in self.get_main_windows():
                 if not file or not window.current.gfile:
                     continue
-                file_id = file.query_info(Gio.FILE_ATTRIBUTE_ID_FILE, 
-                                          Gio.FileQueryInfoFlags.NONE,
-                                          None).get_attribute_as_string(Gio.FILE_ATTRIBUTE_ID_FILE)
-                window_file_id = window.current.gfile.query_info(
-                    Gio.FILE_ATTRIBUTE_ID_FILE,
-                    Gio.FileQueryInfoFlags.NONE,
-                    None).get_attribute_as_string(Gio.FILE_ATTRIBUTE_ID_FILE)
-                if file_id == window_file_id:
+                try:
+                    file_id = file.query_info(
+                        Gio.FILE_ATTRIBUTE_ID_FILE,
+                        Gio.FileQueryInfoFlags.NONE,
+                        None).get_attribute_as_string(Gio.FILE_ATTRIBUTE_ID_FILE)
+                    window_file_id = window.current.gfile.query_info(
+                        Gio.FILE_ATTRIBUTE_ID_FILE,
+                        Gio.FileQueryInfoFlags.NONE,
+                        None).get_attribute_as_string(Gio.FILE_ATTRIBUTE_ID_FILE)
+                except GLib.Error as e:
+                    LOGGER.warning("Could not query file id: %s", e)
+                    file_id = None
+                    window_file_id = None
+                if file_id is not None and file_id == window_file_id:
+                    GLib.idle_add(window.present)
+                    c = True
+                elif file_id is None and file.get_uri() == window.current.gfile.get_uri():
                     GLib.idle_add(window.present)
                     c = True
             if c:
