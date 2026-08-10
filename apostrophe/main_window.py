@@ -435,6 +435,7 @@ class MainWindow(Adw.ApplicationWindow):
                 self.save_document(callback=callback)
 
         filefilter = Gtk.FileFilter.new()
+        filefilter.add_mime_type('text/markdown')
         filefilter.add_mime_type('text/x-markdown')
         filefilter.add_mime_type('text/plain')
         filefilter.set_name('Markdown (.md)')
