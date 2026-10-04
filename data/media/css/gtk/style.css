@@ -426,3 +426,33 @@ progressbar.flag-pan progress {
       #ffd800,
       #21b1ff);
 }
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --view-bg-color: #2b2b2f;
+    --view-fg-color: #eeeeee;
+    --preview-bg-color: #26262a;
+  }
+
+  @define-color code_bg_color #3c3c42;
+
+  @define-color link_fg_color #575757;
+
+  separator.sidebar {
+    background: var(--sidebar-border-color);
+  }
+
+}
+
+@media (prefers-contrast: more) {
+  .toolbars.top {
+    box-shadow: 0 1px var(--border-color),
+                0 2px 4px alpha(var(--headerbar-shade-color), .5);
+  }
+
+  separator.sidebar {
+    background: var(--border-color);
+  }
+}
+

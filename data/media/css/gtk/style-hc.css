@@ -1,8 +1,0 @@
-.toolbars.top {
-  box-shadow: 0 1px var(--border-color),
-              0 2px 4px alpha(var(--headerbar-shade-color), .5);
-}
-
-separator.sidebar {
-  background: var(--border-color);
-}
