@@ -11,7 +11,7 @@ Terminal=false
 Type=Application
 StartupNotify=true
 DBusActivatable=true
-MimeType=text/x-markdown;text/plain;
+MimeType=text/markdown;text/x-markdown;text/plain;
 Actions=new-window;
 
 [Desktop Action new-window]
