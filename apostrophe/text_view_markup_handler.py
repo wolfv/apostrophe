@@ -13,18 +13,13 @@
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 # END LICENSE
 
-import regex as re
 from multiprocessing import Pipe, Process
 
 import gi
 from gi.repository import GLib, Gtk, Pango
 
-from apostrophe import helpers, markup_regex
-from apostrophe.markup_regex import (BLOCK_QUOTE, BOLD, BOLD_ITALIC, CODE,
-                                     HEADER, HEADER_UNDER, HORIZONTAL_RULE,
-                                     IMAGE, ITALIC_ASTERISK, ITALIC_UNDERSCORE,
-                                     LINK, LINK_ALT, LIST, MATH, ORDERED_LIST,
-                                     STRIKETHROUGH, TABLE)
+from apostrophe import helpers
+from apostrophe.markup_parser import parse_worker
 
 gi.require_version('Gtk', '4.0')
 
@@ -139,7 +134,9 @@ class MarkupHandler:
         self.parsing = False
         self.apply_pending = False
         self.parent_conn, child_conn = Pipe()
-        Process(target=self.parse, args=(child_conn,), daemon=True).start()
+        worker = Process(target=parse_worker, args=(child_conn,), daemon=True)
+        worker.start()
+        child_conn.close()
         GLib.io_add_watch(
             self.parent_conn.fileno(),
             GLib.PRIORITY_DEFAULT,
@@ -181,135 +178,6 @@ class MarkupHandler:
                 self.do_apply(text)
         else:
             self.apply_pending = True
-
-    def parse(self, child_conn):
-        """Parses markup in a worker process."""
-
-        while True:
-            while True:
-                try:
-                    text = child_conn.recv()
-                    if not child_conn.poll():
-                        break
-                except EOFError:
-                    child_conn.close()
-                    return
-
-            # List of tuples in the form (tag_name, tag_args, tag_start,
-            # tag_end).
-            result = []
-
-            # Find "```" code block tag (offset + colorize paragraph).
-            code_blocks = []
-            matches = re.finditer(markup_regex.CODE_BLOCK, text)
-            for match in matches:
-                start, end = match.start("block"), match.end("block")
-                result.append((
-                    self.TAG_NAME_CODE_BLOCK, (),
-                    start, end))
-                code_blocks.append((start, end))
-
-            # helper functions to test if a range is inside code blocks.
-            inside_code_blocks = lambda start, end: any(True for (s, e) in code_blocks if s < start < e or s < end < e)
-            match_inside_code_blocks = lambda m: inside_code_blocks(m.start(), m.end())
-
-            # Find:
-            # - "_italic_" (italic)
-            # - "**bold**" (bold)
-            # - "***bolditalic***" (bold/italic)
-            # - "~~strikethrough~~" (strikethrough)
-            # - "`code`" (colorize)
-            # - "$math$" (colorize)
-            # - "---" table (wrap/pixels)
-            regexps = (
-                (ITALIC_ASTERISK, self.TAG_NAME_ITALIC),
-                (ITALIC_UNDERSCORE, self.TAG_NAME_ITALIC),
-                (BOLD, self.TAG_NAME_BOLD),
-                (BOLD_ITALIC, self.TAG_NAME_BOLD_ITALIC),
-                (STRIKETHROUGH, self.TAG_NAME_STRIKETHROUGH),
-                (CODE, self.TAG_NAME_CODE_TEXT),
-                (MATH, self.TAG_NAME_CODE_TEXT),
-                (TABLE, self.TAG_NAME_WRAP_NONE)
-            )
-            for regexp, tag_name in regexps:
-                matches = re.finditer(regexp, text)
-                for match in matches:
-                    if match_inside_code_blocks(match):
-                        continue
-                    result.append((tag_name, (), match.start(), match.end()))
-
-            # Find:
-            # - "[description](url)" (gray out)
-            # - "![description](image_url)" (gray out)
-            regexps = (
-                (LINK, self.TAG_NAME_LINK_COLOR_TEXT),
-                (IMAGE, self.TAG_NAME_GRAY_TEXT)
-            )
-            for regexp, tag_name in regexps:
-                matches = re.finditer(regexp, text)
-                for match in matches:
-                    if match_inside_code_blocks(match):
-                        continue
-                    result.append(
-                        (tag_name, (), match.start(), match.start("text")))
-                    result.append(
-                        (tag_name, (), match.end("text"), match.end()))
-
-            # Find "<url>" links (gray out).
-            matches = re.finditer(LINK_ALT, text)
-            for match in matches:
-                if match_inside_code_blocks(match):
-                    continue
-                result.append((
-                    self.TAG_NAME_GRAY_TEXT,
-                    (), match.start("text"),
-                    match.end("text")))
-
-            # Find "---" horizontal rule (center).
-            matches = re.finditer(HORIZONTAL_RULE, text)
-            for match in matches:
-                if match_inside_code_blocks(match):
-                    continue
-                result.append((
-                    self.TAG_NAME_CENTER,
-                    (), match.start("symbols"),
-                    match.end("symbols")))
-
-
-            # Find "> blockquote" (offset).
-            matches = re.finditer(BLOCK_QUOTE, text)
-            for match in matches:
-                if match_inside_code_blocks(match):
-                    continue
-                result.append((self.TAG_NAME_MARGIN_INDENT,
-                               (2, -2), match.start(), match.end()))
-
-            # Find "# Header" (offset+bold).
-            matches = re.finditer(HEADER, text)
-            for match in matches:
-                if match_inside_code_blocks(match):
-                    continue
-                margin = -len(match.group("level")) - 1
-                result.append((
-                    self.TAG_NAME_MARGIN_INDENT, (margin, 0),
-                    match.start(), match.end()))
-                result.append(
-                    (self.TAG_NAME_BOLD, (), match.start(), match.end()))
-
-            # Find "=======" header underline (bold).
-            matches = re.finditer(HEADER_UNDER, text)
-            for match in matches:
-                if match_inside_code_blocks(match):
-                    continue
-                # check if it's a YAML fronmatter
-                if frontmatter := re.search(markup_regex.FRONTMATTER, text):
-                    if match.start() <= frontmatter.end():
-                        continue
-                result.append(
-                    (self.TAG_NAME_BOLD, (), match.start(), match.end()))
-
-            # Send parsed data back.
-            child_conn.send((text, result))
 
     def on_parsed(self, _source, _condition):
         """Reads the parsing result from the pipe

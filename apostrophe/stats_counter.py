@@ -1,47 +1,13 @@
-import regex as re
 from multiprocessing import Process, Pipe
 
 from gi.repository import GLib
 
-from apostrophe.markup_regex import ITALIC_ASTERISK, ITALIC_UNDERSCORE,\
-    BOLD_ITALIC, BOLD, STRIKETHROUGH, IMAGE, LINK, LINK_ALT, HORIZONTAL_RULE,\
-    LIST, MATH, TABLE, CODE_BLOCK, HEADER_UNDER, HEADER, BLOCK_QUOTE,\
-    ORDERED_LIST, FOOTNOTE_ID, FOOTNOTE
+from apostrophe.stats_counter_worker import count_worker
 
 
 class StatsCounter:
     """Counts characters, words, sentences
     and read time using a worker process."""
-
-    # Regexp that matches any character,
-    # except for newlines and subsequent spaces.
-    CHARACTERS = re.compile(r"[^\s]|(?:[^\S\n](?!\s))")
-
-    # Regexp that matches Asian letters, general symbols and hieroglyphs,
-    # as well as sequences of word characters optionally containing non-word
-    # characters in-between.
-    WORDS = re.compile(r"[\u3040-\uffff]|(?:\w+\S?\w*)+", re.UNICODE)
-
-    # Regexp that matches sentence-ending punctuation characters, ie.
-    # full stop, question mark, exclamation mark, paragraph, and variants.
-    SENTENCES = re.compile(r"[^\n][.。।෴۔።?՞;⸮؟？፧꘏⳺⳻⁇﹖⁈⁉‽!﹗！՜߹႟᥄\n]+")
-
-    # Regexp that matches paragraphs, ie.
-    # anything separated by at least 2 newlines.
-    PARAGRAPHS = re.compile(r"(?:[^\n]+\n?)+(?=\n{2,}|\Z)")
-
-    # List of regexp whose matches should be replaced by their "text" group.
-    # Order is important.
-    MARKUP_REGEXP_REPLACE = (
-        BOLD_ITALIC, ITALIC_ASTERISK, ITALIC_UNDERSCORE, BOLD, STRIKETHROUGH,
-        IMAGE, LINK, LINK_ALT, LIST, ORDERED_LIST, BLOCK_QUOTE, HEADER,
-        HEADER_UNDER, CODE_BLOCK, TABLE, MATH, FOOTNOTE_ID, FOOTNOTE
-    )
-
-    # List of regexp whose matches should be removed. Order is important.
-    MARKUP_REGEXP_REMOVE = (
-        HORIZONTAL_RULE,
-    )
 
     def __init__(self, callback):
         super().__init__()
@@ -50,7 +16,9 @@ class StatsCounter:
         self.counting = False
         self.count_pending_text = None
         self.parent_conn, child_conn = Pipe()
-        Process(target=self.do_count, args=(child_conn,), daemon=True).start()
+        worker = Process(target=count_worker, args=(child_conn,), daemon=True)
+        worker.start()
+        child_conn.close()
         GLib.io_add_watch(
             self.parent_conn.fileno(), GLib.PRIORITY_LOW, GLib.IO_IN,
             self.on_counted, callback)
@@ -68,43 +36,6 @@ class StatsCounter:
             self.parent_conn.send(text)
         else:
             self.count_pending_text = text
-
-    def do_count(self, child_conn):
-        """Counts stats in a worker process.
-
-        The result is in the format
-        (characters, words, sentences, (hours, minutes, seconds))"""
-
-        while True:
-            while True:
-                try:
-                    text = child_conn.recv()
-                    if not child_conn.poll():
-                        break
-                except EOFError:
-                    child_conn.close()
-                    return
-
-            for regexp in self.MARKUP_REGEXP_REPLACE:
-                text = re.sub(regexp, r"\g<text>", text)
-            for regexp in self.MARKUP_REGEXP_REMOVE:
-                text = re.sub(regexp, "", text)
-
-            character_count = len(re.findall(self.CHARACTERS, text))
-
-            word_count = len(re.findall(self.WORDS, text))
-
-            sentence_count = len(re.findall(self.SENTENCES, text))
-
-            paragraph_count = len(re.findall(self.PARAGRAPHS, text))
-
-            read_m, read_s = divmod(word_count / 200 * 60, 60)
-            read_h, read_m = divmod(read_m, 60)
-            read_time = (int(read_h), int(read_m), int(read_s))
-
-            child_conn.send(
-                (character_count, word_count, sentence_count,
-                    paragraph_count, read_time))
 
     def on_counted(self, _source, _condition, callback):
         """Reads the counting result from the pipe
