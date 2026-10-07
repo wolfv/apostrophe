@@ -1,0 +1,6 @@
+## typst
+(download from https://github.com/flatpak/flatpak-builder-tools/blob/master/cargo/flatpak-cargo-generator.py)
+python flatpak-cargo-generator.py /tmp/typst-X.Y.Z/Cargo.lock -o cargo-sources.json
+
+## python dependencies
+flatpak run org.flathub.flatpak-external-data-checker build-aux/flatpak/org.gnome.gitlab.somas.Apostrophe.json --update --edit-only
