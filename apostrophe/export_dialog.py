@@ -96,7 +96,7 @@ class ExportDialog:
             "args": ["--embed-resources",
                      "--standalone",
                      "--css=%s" % Theme.get_current().web_css,
-                     "--mathjax"]
+                     "--math-method=mathjax"]
         },
         "odt":
         {
@@ -375,7 +375,7 @@ class AdvancedExportDialog(Adw.Dialog):
 
         if self.show_html_options:
             args.append("--css=%s" % Theme.get_current().web_css)
-            args.append("--mathjax")
+            args.append("--math-method=mathjax")
             if self.sw_self_contained.get_active():
                 args.append("--embed-resources")
                 args.append("--standalone")

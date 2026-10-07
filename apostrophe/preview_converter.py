@@ -47,7 +47,7 @@ class PreviewConverter:
 
             args = ['--metadata=pagetitle:""',
                     '--standalone',
-                    '--mathjax',
+                    '--math-method=mathjax',
                     '--css=' + Theme.get_current().web_css,
                     '--metadata=base_path:' + base_path,
                     '--lua-filter=' +
