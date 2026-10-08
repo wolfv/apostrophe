@@ -300,6 +300,7 @@ class TestRegex(unittest.TestCase):
             "1. item": {"indent": "", "prefix": "1.", "number": "1", "delimiter": ".", "text": "item"},
             "a) item": {"indent": "", "prefix": "a)", "delimiter": ")", "text": "item"},
             "    2) indented": {"indent": "    ", "prefix": "2)", "number": "2", "delimiter": ")", "text": "indented"},
+            "hello.": None,
             "1 item": None
         },
         regex_pattern=markup_regex.ORDERED_LIST
