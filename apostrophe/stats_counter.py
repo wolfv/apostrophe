@@ -16,10 +16,10 @@ class StatsCounter:
         self.counting = False
         self.count_pending_text = None
         self.parent_conn, child_conn = Pipe()
-        worker = Process(target=count_worker, args=(child_conn,), daemon=True)
-        worker.start()
+        self.worker = Process(target=count_worker, args=(child_conn,), daemon=True)
+        self.worker.start()
         child_conn.close()
-        GLib.io_add_watch(
+        self._io_watch_id =GLib.io_add_watch(
             self.parent_conn.fileno(), GLib.PRIORITY_LOW, GLib.IO_IN,
             self.on_counted, callback)
 
@@ -50,11 +50,18 @@ class StatsCounter:
             if self.parent_conn.poll():
                 callback(self.parent_conn.recv())
             return True
-        except EOFError:
+        except (EOFError, OSError):
             return False
 
     def stop(self):
         """Stops the worker process.
         StatsCounter shouldn't be used after this."""
 
+        if self._io_watch_id is not None:
+            GLib.source_remove(self._io_watch_id)
+            self._io_watch_id = None
+
         self.parent_conn.close()
+        if self.worker.is_alive():
+            self.worker.terminate()
+        self.worker.join()

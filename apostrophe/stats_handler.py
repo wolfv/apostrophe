@@ -168,6 +168,6 @@ class StatsHandler:
         if close_popover and self.popover:
             self.popover.popdown()
 
-    def on_destroy(self, _widget):
+    def on_destroy(self, _widget=None):
         self.stats_counter.stop()
         self.selected_stats_counter.stop()

@@ -134,10 +134,11 @@ class MarkupHandler:
         self.parsing = False
         self.apply_pending = False
         self.parent_conn, child_conn = Pipe()
-        worker = Process(target=parse_worker, args=(child_conn,), daemon=True)
-        worker.start()
+        self.worker = Process(target=parse_worker, args=(child_conn,),
+                              daemon=True)
+        self.worker.start()
         child_conn.close()
-        GLib.io_add_watch(
+        self._io_watch_id = GLib.io_add_watch(
             self.parent_conn.fileno(),
             GLib.PRIORITY_DEFAULT,
             GLib.IO_IN,
@@ -191,7 +192,7 @@ class MarkupHandler:
             if self.parent_conn.poll():
                 self.do_apply(*self.parent_conn.recv())
             return True
-        except EOFError:
+        except (EOFError, OSError):
             return False
         finally:
             self.parsing = False
@@ -285,4 +286,10 @@ class MarkupHandler:
             tag.set_properties(left_margin=margin, indent=indent)
 
     def stop(self, *_):
+        if self._io_watch_id is not None:
+            GLib.source_remove(self._io_watch_id)
+            self._io_watch_id = None
         self.parent_conn.close()
+        if self.worker.is_alive():
+            self.worker.terminate()
+        self.worker.join()

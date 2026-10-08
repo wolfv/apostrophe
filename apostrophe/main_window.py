@@ -782,6 +782,8 @@ class MainWindow(Adw.ApplicationWindow):
         LOGGER.info('close request called')
 
         if self.close_anyway:
+            self.textview.markup.stop()
+            self.editor.stats_handler.on_destroy()
             self.run_dispose()
             return False
 
