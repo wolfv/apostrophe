@@ -144,6 +144,8 @@ class PreviewHandler:
             self.show()
 
     def refresh_preview(self, *args, **kwargs):
+        if self.panels().revealed and not self.preview_visible:
+            self.preview_visible = True
         if self.preview_visible:
             self.__show()
 
