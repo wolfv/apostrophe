@@ -69,6 +69,22 @@
     <internet>offline-only</internet>
   </supports>
   <releases>
+    <release type="stable" version="3.5" date="2026-10-08T00:00:00Z">
+      <description>
+        <p>The Apostrophe developer fully stands with Palestine and condemns the genocide Israel is enacting on its people right now. Any donation the project receives will be diverted to UNRWA</p>
+        <p>This release adds the following features:</p>
+        <ul>
+          <li>Updated dependencies</li>
+          <li>Improved export of Chinese and Japanese documents</li>
+          <li>Updated translations</li>
+        </ul>
+        <p>This release fixes the following bugs:</p>
+        <ul>
+          <li>Fixed a bug where the preview wouldn't load under certain conditions</li>
+          <li>Fixed a bug where one-word sentences would get deleted</li>
+        </ul>
+      </description>
+    </release>
     <release type="stable" version="3.4" date="2025-09-30T00:00:00Z">
       <description>
         <p>The Apostrophe developer fully stands with Palestine and condemns the genocide Israel is enacting on its people right now. Any donation the project receives will be diverted to UNRWA</p>
