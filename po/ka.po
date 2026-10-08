@@ -2,14 +2,14 @@
 # Copyright (C) 2022 apostrophe's authors
 # This file is distributed under the same license as the apostrophe package.
 # Jacob Gogichaishvili <iakob.gogichaishvili@gmail.com>, 2022.
-# Ekaterine Papava <papava.e@gtu.ge>, 2022-2025
+# Ekaterine Papava <papava.e@gtu.ge>, 2022-2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: apostrophe main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/apostrophe/issues\n"
-"POT-Creation-Date: 2025-08-28 20:24+0000\n"
-"PO-Revision-Date: 2025-08-29 13:05+0200\n"
+"POT-Creation-Date: 2026-10-06 19:15+0000\n"
+"PO-Revision-Date: 2026-10-08 06:01+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian < >\n"
 "Language: ka\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/org.gnome.gitlab.somas.Apostrophe.desktop.in.in:2
 #: data/org.gnome.gitlab.somas.Apostrophe.metainfo.xml.in.in:4
@@ -48,6 +48,7 @@ msgstr "მარკდაუნის ჩასწორება სტილ�
 
 #. developer_name tag deprecated with Appstream 1.0
 #: data/org.gnome.gitlab.somas.Apostrophe.metainfo.xml.in.in:9
+#: data/org.gnome.gitlab.somas.Apostrophe.metainfo.xml.in.in:11
 msgid "Manuel Genovés"
 msgstr "Manuel Genovés"
 
@@ -370,12 +371,12 @@ msgstr "ინკრემენტული ტყვიები"
 msgid "Show one bullet point after another in a slideshow"
 msgstr "ჩვენება ერთი ტყვია მეორის მიყოლებით სლაიდშოუში"
 
-#: data/ui/HeaderbarNarrow.ui:26 data/ui/Headerbar.ui:43
+#: data/ui/HeaderbarNarrow.ui:26 data/ui/Headerbar.ui:45
 msgid "Main Menu"
 msgstr "მთავარი მენიუ"
 
 #: data/ui/HeaderbarNarrow.ui:51 data/ui/Headerbar.ui:10
-#: apostrophe/main_window.py:891 apostrophe/main_window.py:906
+#: apostrophe/main_window.py:892 apostrophe/main_window.py:907
 msgid "New File"
 msgstr "ახალი ფაილი"
 
@@ -384,59 +385,59 @@ msgid "_Open"
 msgstr "_გახსნა"
 
 #: data/ui/HeaderbarNarrow.ui:59 data/ui/HeaderbarNarrow.ui:63
-#: data/ui/Headerbar.ui:25
+#: data/ui/Headerbar.ui:26
 msgid "_Save"
 msgstr "_შენახვა"
 
-#: data/ui/HeaderbarNarrow.ui:67 data/ui/Headerbar.ui:119
+#: data/ui/HeaderbarNarrow.ui:67 data/ui/Headerbar.ui:121
 msgid "_Save As..."
 msgstr "_შენახვა, როგორც..."
 
-#: data/ui/HeaderbarNarrow.ui:90 data/ui/Headerbar.ui:142
+#: data/ui/HeaderbarNarrow.ui:90 data/ui/Headerbar.ui:144
 msgid "Advanced _Export…"
 msgstr "გაუმჯობესებული _გატანა…"
 
-#: data/ui/HeaderbarNarrow.ui:96 data/ui/Headerbar.ui:148
+#: data/ui/HeaderbarNarrow.ui:96 data/ui/Headerbar.ui:150
 msgid "_Copy HTML"
 msgstr "HTML-ის _კოპირება"
 
-#: data/ui/HeaderbarNarrow.ui:104 data/ui/Headerbar.ui:77
+#: data/ui/HeaderbarNarrow.ui:104 data/ui/Headerbar.ui:79
 msgid "_Hemingway Mode"
 msgstr "_ჰემინგუეის რეჟიმი"
 
-#: data/ui/HeaderbarNarrow.ui:108 data/ui/Headerbar.ui:81
+#: data/ui/HeaderbarNarrow.ui:108 data/ui/Headerbar.ui:83
 msgid "_Focus Mode"
 msgstr "_ფოკუსის რეჟიმი"
 
-#: data/ui/HeaderbarNarrow.ui:114 data/ui/Headerbar.ui:54
+#: data/ui/HeaderbarNarrow.ui:114 data/ui/Headerbar.ui:56
 msgid "Search in the File"
 msgstr "ფაილში ძებნა"
 
-#: data/ui/HeaderbarNarrow.ui:118 data/ui/Headerbar.ui:87
+#: data/ui/HeaderbarNarrow.ui:118 data/ui/Headerbar.ui:89
 msgid "Find and _Replace"
 msgstr "ძებნა და _ჩანაცვლება"
 
-#: data/ui/HeaderbarNarrow.ui:124 data/ui/Headerbar.ui:93
+#: data/ui/HeaderbarNarrow.ui:124 data/ui/Headerbar.ui:95
 msgid "_Preferences"
 msgstr "_გამართვა"
 
-#: data/ui/HeaderbarNarrow.ui:130 data/ui/Headerbar.ui:99
+#: data/ui/HeaderbarNarrow.ui:130 data/ui/Headerbar.ui:101
 msgid "Open _Tutorial"
 msgstr "_გაკვეთილის გახსნა"
 
-#: data/ui/HeaderbarNarrow.ui:135 data/ui/Headerbar.ui:104
+#: data/ui/HeaderbarNarrow.ui:135 data/ui/Headerbar.ui:106
 msgid "_Keyboard Shortcuts"
 msgstr "_კლავიატურის მალსახმობები"
 
-#: data/ui/HeaderbarNarrow.ui:139 data/ui/Headerbar.ui:108
+#: data/ui/HeaderbarNarrow.ui:139 data/ui/Headerbar.ui:110
 msgid "_About Apostrophe"
 msgstr "Apostrophe-ის შესახებ"
 
-#: data/ui/Headerbar.ui:19
+#: data/ui/Headerbar.ui:20
 msgid "Open Markdown File"
 msgstr "მარკდაუნის ფაილის გახსნა"
 
-#: data/ui/Headerbar.ui:27
+#: data/ui/Headerbar.ui:29
 msgid "Save Markdown File"
 msgstr "მარკდაუნის ფაილის შენახვა"
 
@@ -535,165 +536,165 @@ msgstr "ჩანაცვლება"
 msgid "Replace All"
 msgstr "ყველას ჩანაცვლება"
 
-#: data/ui/Shortcuts.ui:11
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:6
+msgctxt "shortcuts dialog"
 msgid "General"
-msgstr "ძირითადი"
+msgstr "ზოგადი"
 
-#: data/ui/Shortcuts.ui:14
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:9
+msgctxt "shortcuts dialog"
 msgid "New"
 msgstr "ახალი"
 
-#: data/ui/Shortcuts.ui:20
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:15
+msgctxt "shortcuts dialog"
 msgid "Open"
 msgstr "გახსნა"
 
-#: data/ui/Shortcuts.ui:26
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:21
+msgctxt "shortcuts dialog"
 msgid "Save"
 msgstr "შენახვა"
 
-#: data/ui/Shortcuts.ui:32
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:27
+msgctxt "shortcuts dialog"
 msgid "Save As"
 msgstr "შენახვა, როგორც"
 
-#: data/ui/Shortcuts.ui:38
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:33
+msgctxt "shortcuts dialog"
 msgid "Close Document"
 msgstr "დოკუმენტის დახურვა"
 
-#: data/ui/Shortcuts.ui:44
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:39
+msgctxt "shortcuts dialog"
 msgid "Show Preferences"
-msgstr "პარამეტრების ფანჯრის ჩვენება"
+msgstr "პარამეტრების ჩვენება"
 
-#: data/ui/Shortcuts.ui:50
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:45
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "კლავიატურის მალსახსმობები"
 
-#: data/ui/Shortcuts.ui:56
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:51
+msgctxt "shortcuts dialog"
 msgid "Quit Application"
 msgstr "აპლიკაციიდან გასვლა"
 
-#: data/ui/Shortcuts.ui:64
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:59
+msgctxt "shortcuts dialog"
 msgid "Modes"
 msgstr "რეჟიმები"
 
-#: data/ui/Shortcuts.ui:67
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:62
+msgctxt "shortcuts dialog"
 msgid "Focus Mode"
 msgstr "ფოკუსის რეჟიმი"
 
-#: data/ui/Shortcuts.ui:73
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:68
+msgctxt "shortcuts dialog"
 msgid "Hemingway Mode"
 msgstr "ჰემინგუეის რეჟიმი"
 
-#: data/ui/Shortcuts.ui:80
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:74
+msgctxt "shortcuts dialog"
 msgid "Preview"
 msgstr "მინიატურა"
 
-#: data/ui/Shortcuts.ui:86
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:80
+msgctxt "shortcuts dialog"
 msgid "Fullscreen"
-msgstr "მთელ ეკრანზე"
+msgstr "სრულ ეკრანზე"
 
-#: data/ui/Shortcuts.ui:94 data/ui/Shortcuts.ui:97
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:88 data/ui/Shortcuts.ui:91
+msgctxt "shortcuts dialog"
 msgid "Find"
 msgstr "ძებნა"
 
-#: data/ui/Shortcuts.ui:103
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:97
+msgctxt "shortcuts dialog"
 msgid "Find and Replace"
 msgstr "ძებნა და ჩანაცვლება"
 
-#: data/ui/Shortcuts.ui:111
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:105
+msgctxt "shortcuts dialog"
 msgid "Markdown"
 msgstr "მარკდაუნი"
 
-#: data/ui/Shortcuts.ui:114
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:108
+msgctxt "shortcuts dialog"
 msgid "Separator"
 msgstr "გამყოფი"
 
-#: data/ui/Shortcuts.ui:120
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:114
+msgctxt "shortcuts dialog"
 msgid "Header"
-msgstr "თავსართი"
+msgstr "სათაური"
 
-#: data/ui/Shortcuts.ui:126
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:120
+msgctxt "shortcuts dialog"
 msgid "List Item"
 msgstr "სიის ელემენტი"
 
-#: data/ui/Shortcuts.ui:133
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:126
+msgctxt "shortcuts dialog"
 msgid "Italic"
 msgstr "კურსივი"
 
-#: data/ui/Shortcuts.ui:139
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:132
+msgctxt "shortcuts dialog"
 msgid "Bold"
 msgstr "სქელი"
 
-#: data/ui/Shortcuts.ui:145
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:138
+msgctxt "shortcuts dialog"
 msgid "Strikeout"
 msgstr "ხაზგასმა"
 
-#: data/ui/Shortcuts.ui:153
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:146
+msgctxt "shortcuts dialog"
 msgid "Copy and Paste"
 msgstr "კოპირება და ჩასმა"
 
-#: data/ui/Shortcuts.ui:156
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:149
+msgctxt "shortcuts dialog"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: data/ui/Shortcuts.ui:162
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:155
+msgctxt "shortcuts dialog"
 msgid "Cut"
 msgstr "ამოჭრა"
 
-#: data/ui/Shortcuts.ui:168
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:161
+msgctxt "shortcuts dialog"
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: data/ui/Shortcuts.ui:176
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:169
+msgctxt "shortcuts dialog"
 msgid "Undo and Redo"
 msgstr "გაუქმება/გამეორება"
 
-#: data/ui/Shortcuts.ui:179
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:172
+msgctxt "shortcuts dialog"
 msgid "Undo Previous Command"
-msgstr "წინა ბრძანების დაბრუნება"
+msgstr "წინა ბრძანების გაუქმება"
 
-#: data/ui/Shortcuts.ui:185
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:178
+msgctxt "shortcuts dialog"
 msgid "Redo Previous Command"
 msgstr "წინა ბრძანების გამეორება"
 
-#: data/ui/Shortcuts.ui:193
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:186
+msgctxt "shortcuts dialog"
 msgid "Selection"
 msgstr "მონიშნული"
 
-#: data/ui/Shortcuts.ui:196
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:189
+msgctxt "shortcuts dialog"
 msgid "Select All Text"
-msgstr "ტექსტის სრულად მონიშვნა"
+msgstr "მთელი ტექსტის მონიშვნა"
 
 #: data/ui/Statsbar.ui:21 data/ui/Statsbar.ui:40
 msgid "Show Statistics"
@@ -857,15 +858,15 @@ msgstr "დისკზე ფაილი შეიცვალა"
 msgid "The file has been changed by another program"
 msgstr "ფაილი შეიცვალა სხვა პროგრამის მიერ"
 
-#: data/ui/Window.ui:214
+#: data/ui/Window.ui:218
 msgid "_Discard Changes and Reload"
 msgstr "_ცვლილებების გაუქმება და თავიდან ჩატვირთვა"
 
-#: apostrophe/application.py:303
+#: apostrophe/application.py:314
 msgid "Donate"
 msgstr "შემოწირულობა"
 
-#: apostrophe/application.py:304
+#: apostrophe/application.py:315
 msgid "Translations"
 msgstr "თარგმანები"
 
@@ -883,8 +884,8 @@ msgid "Export to %s"
 msgstr "%s-ში გატანა"
 
 #: apostrophe/export_dialog.py:122 apostrophe/export_dialog.py:324
-#: apostrophe/export_dialog.py:329 apostrophe/main_window.py:446
-#: apostrophe/main_window.py:532 apostrophe/main_window.py:655
+#: apostrophe/export_dialog.py:329 apostrophe/main_window.py:447
+#: apostrophe/main_window.py:533 apostrophe/main_window.py:656
 msgid "Cancel"
 msgstr "გაუქმება"
 
@@ -893,6 +894,7 @@ msgid "Apostrophe experienced an error while trying to export:"
 msgstr "Apostrophe-მა აღმოაჩინა შეცდომა გატანის მცდელობისას:"
 
 #: apostrophe/export_dialog.py:230
+#, python-brace-format
 msgid "Export to {}"
 msgstr "{}-ში გატანა"
 
@@ -960,31 +962,31 @@ msgstr "ტექსტის წაშლა ჰემინგუეის რ
 msgid "Tell me more"
 msgstr "მითხარი მეტი"
 
-#: apostrophe/main_window.py:442
+#: apostrophe/main_window.py:443
 msgid "Save your File"
 msgstr "ფაილის შენახვა"
 
-#: apostrophe/main_window.py:445 apostrophe/main_window.py:657
+#: apostrophe/main_window.py:446 apostrophe/main_window.py:658
 msgid "Save"
 msgstr "შენახვა"
 
-#: apostrophe/main_window.py:521
+#: apostrophe/main_window.py:522
 msgid "Markdown Files"
 msgstr "მარკდაუნის ფაილები"
 
-#: apostrophe/main_window.py:525
+#: apostrophe/main_window.py:526
 msgid "Plain Text Files"
 msgstr "ჩვეულებრივი ტექსტის ფაილები"
 
-#: apostrophe/main_window.py:528
+#: apostrophe/main_window.py:529
 msgid "Open a .md file"
 msgstr ".md ფაილის გახსნა"
 
-#: apostrophe/main_window.py:531
+#: apostrophe/main_window.py:532
 msgid "Open"
 msgstr "გახსნა"
 
-#: apostrophe/main_window.py:609
+#: apostrophe/main_window.py:610
 #, python-brace-format
 msgid ""
 "Failed to detect encoding for file:\n"
@@ -999,11 +1001,11 @@ msgstr ""
 "შეცდომა:\n"
 "{err_msg}"
 
-#: apostrophe/main_window.py:649
+#: apostrophe/main_window.py:650
 msgid "Save Changes?"
 msgstr "შევინახო ცვლილებები?"
 
-#: apostrophe/main_window.py:650
+#: apostrophe/main_window.py:651
 #, python-format
 msgid ""
 "“%s” contains unsaved changes. If you don’t save, all your changes will be "
@@ -1012,7 +1014,7 @@ msgstr ""
 "\"%s\" შეუნახავ ცვლილებებს შეიცავს. თუ არ შეინახავთ, ყველა თქვენი ცვლილება "
 "სამუდამოდ დაიკარგება."
 
-#: apostrophe/main_window.py:656
+#: apostrophe/main_window.py:657
 msgid "Discard"
 msgstr "მოცილება"
 
@@ -1045,50 +1047,60 @@ msgid "Windowed"
 msgstr "ცალკე ფანჯარა"
 
 #: apostrophe/stats_handler.py:122
+#, python-brace-format
 msgid "{:n} of {:n} Characters"
 msgstr "{:n}-ი {:n} -დან სიმბოლო"
 
 #: apostrophe/stats_handler.py:124
+#, python-brace-format
 msgid "{:n} Character"
 msgid_plural "{:n} Characters"
 msgstr[0] "{:n} სიმბოლო"
 msgstr[1] "{:n} სიმბოლო"
 
 #: apostrophe/stats_handler.py:127
+#, python-brace-format
 msgid "{:n} of {:n} Words"
 msgstr "{:n} -ი {:n} -დან სიტყვა"
 
 #: apostrophe/stats_handler.py:129
+#, python-brace-format
 msgid "{:n} Word"
 msgid_plural "{:n} Words"
 msgstr[0] "{:n} სიტყვა"
 msgstr[1] "{:n} სიტყვა"
 
 #: apostrophe/stats_handler.py:132
+#, python-brace-format
 msgid "{:n} of {:n} Sentences"
 msgstr "{:n} -ი {:n} -დან წინადადება"
 
 #: apostrophe/stats_handler.py:134
+#, python-brace-format
 msgid "{:n} Sentence"
 msgid_plural "{:n} Sentences"
 msgstr[0] "{:n} წინადადება"
 msgstr[1] "{:n} წინადადება"
 
 #: apostrophe/stats_handler.py:137
+#, python-brace-format
 msgid "{:n} of {:n} Paragraphs"
 msgstr "{:n}-ი {:n} -დან პარაგრაფი"
 
 #: apostrophe/stats_handler.py:139
+#, python-brace-format
 msgid "{:n} Paragraph"
 msgid_plural "{:n} Paragraphs"
 msgstr[0] "{:n} პარაგრაფი"
 msgstr[1] "{:n} პარაგრაფი"
 
 #: apostrophe/stats_handler.py:142
+#, python-brace-format
 msgid "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} Read Time"
 msgstr "{:d}:{:02d}:{:02d}-ი {:d}:{:02d}:{:02d}-დან წაკითხვის დრო"
 
 #: apostrophe/stats_handler.py:144
+#, python-brace-format
 msgid "{:d}:{:02d}:{:02d} Read Time"
 msgstr "{:d}:{:02d}:{:02d} კითხვის დრო"
 
@@ -1151,6 +1163,38 @@ msgstr ""
 msgid "web page"
 msgstr "ვებგვერდი"
 
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "ახალი"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "გახსნა"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "შენახვა"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Hemingway Mode"
+#~ msgstr "ჰემინგუეის რეჟიმი"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "მინიატურა"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Header"
+#~ msgstr "თავსართი"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Italic"
+#~ msgstr "კურსივი"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Bold"
+#~ msgstr "სქელი"
+
 #~ msgid "Show More Controls"
 #~ msgstr "მეტი კონტროლების ჩვენება"
 
@@ -1162,9 +1206,6 @@ msgstr "ვებგვერდი"
 
 #~ msgid "_Find"
 #~ msgstr "_ძებნა"
-
-#~ msgid "New"
-#~ msgstr "ახალი"
 
 #~ msgid "Manuel G., Wolf V."
 #~ msgstr "მანუელ გ., ვულფ ვ."
