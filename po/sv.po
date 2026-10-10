@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apostrophe\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/apostrophe/issues\n"
-"POT-Creation-Date: 2025-08-28 14:33+0000\n"
-"PO-Revision-Date: 2025-08-28 22:23+0200\n"
+"POT-Creation-Date: 2026-10-05 21:25+0000\n"
+"PO-Revision-Date: 2026-10-10 15:28+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/org.gnome.gitlab.somas.Apostrophe.desktop.in.in:2
 #: data/org.gnome.gitlab.somas.Apostrophe.metainfo.xml.in.in:4
@@ -37,6 +37,7 @@ msgstr "Redigera markdown med stil"
 
 #. developer_name tag deprecated with Appstream 1.0
 #: data/org.gnome.gitlab.somas.Apostrophe.metainfo.xml.in.in:9
+#: data/org.gnome.gitlab.somas.Apostrophe.metainfo.xml.in.in:11
 msgid "Manuel Genovés"
 msgstr "Manuel Genovés"
 
@@ -359,12 +360,12 @@ msgstr "Stegvisa punkter"
 msgid "Show one bullet point after another in a slideshow"
 msgstr "Visa en punkt efter en annan i ett bildspel"
 
-#: data/ui/HeaderbarNarrow.ui:26 data/ui/Headerbar.ui:43
+#: data/ui/HeaderbarNarrow.ui:26 data/ui/Headerbar.ui:45
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
 #: data/ui/HeaderbarNarrow.ui:51 data/ui/Headerbar.ui:10
-#: apostrophe/main_window.py:891 apostrophe/main_window.py:906
+#: apostrophe/main_window.py:892 apostrophe/main_window.py:907
 msgid "New File"
 msgstr "Ny fil"
 
@@ -373,59 +374,59 @@ msgid "_Open"
 msgstr "Ö_ppna"
 
 #: data/ui/HeaderbarNarrow.ui:59 data/ui/HeaderbarNarrow.ui:63
-#: data/ui/Headerbar.ui:25
+#: data/ui/Headerbar.ui:26
 msgid "_Save"
 msgstr "_Spara"
 
-#: data/ui/HeaderbarNarrow.ui:67 data/ui/Headerbar.ui:119
+#: data/ui/HeaderbarNarrow.ui:67 data/ui/Headerbar.ui:121
 msgid "_Save As..."
 msgstr "_Spara som…"
 
-#: data/ui/HeaderbarNarrow.ui:90 data/ui/Headerbar.ui:142
+#: data/ui/HeaderbarNarrow.ui:90 data/ui/Headerbar.ui:144
 msgid "Advanced _Export…"
 msgstr "Avancerad _export…"
 
-#: data/ui/HeaderbarNarrow.ui:96 data/ui/Headerbar.ui:148
+#: data/ui/HeaderbarNarrow.ui:96 data/ui/Headerbar.ui:150
 msgid "_Copy HTML"
 msgstr "_Kopiera HTML"
 
-#: data/ui/HeaderbarNarrow.ui:104 data/ui/Headerbar.ui:77
+#: data/ui/HeaderbarNarrow.ui:104 data/ui/Headerbar.ui:79
 msgid "_Hemingway Mode"
 msgstr "_Hemingway-läge"
 
-#: data/ui/HeaderbarNarrow.ui:108 data/ui/Headerbar.ui:81
+#: data/ui/HeaderbarNarrow.ui:108 data/ui/Headerbar.ui:83
 msgid "_Focus Mode"
 msgstr "_Fokusläge"
 
-#: data/ui/HeaderbarNarrow.ui:114 data/ui/Headerbar.ui:54
+#: data/ui/HeaderbarNarrow.ui:114 data/ui/Headerbar.ui:56
 msgid "Search in the File"
 msgstr "Sök i filen"
 
-#: data/ui/HeaderbarNarrow.ui:118 data/ui/Headerbar.ui:87
+#: data/ui/HeaderbarNarrow.ui:118 data/ui/Headerbar.ui:89
 msgid "Find and _Replace"
 msgstr "Sök och _ersätt"
 
-#: data/ui/HeaderbarNarrow.ui:124 data/ui/Headerbar.ui:93
+#: data/ui/HeaderbarNarrow.ui:124 data/ui/Headerbar.ui:95
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: data/ui/HeaderbarNarrow.ui:130 data/ui/Headerbar.ui:99
+#: data/ui/HeaderbarNarrow.ui:130 data/ui/Headerbar.ui:101
 msgid "Open _Tutorial"
 msgstr "Öppna _handledning"
 
-#: data/ui/HeaderbarNarrow.ui:135 data/ui/Headerbar.ui:104
+#: data/ui/HeaderbarNarrow.ui:135 data/ui/Headerbar.ui:106
 msgid "_Keyboard Shortcuts"
 msgstr "_Tangentbordsgenvägar"
 
-#: data/ui/HeaderbarNarrow.ui:139 data/ui/Headerbar.ui:108
+#: data/ui/HeaderbarNarrow.ui:139 data/ui/Headerbar.ui:110
 msgid "_About Apostrophe"
 msgstr "_Om Apostrophe"
 
-#: data/ui/Headerbar.ui:19
+#: data/ui/Headerbar.ui:20
 msgid "Open Markdown File"
 msgstr "Öppna markdown-fil"
 
-#: data/ui/Headerbar.ui:27
+#: data/ui/Headerbar.ui:29
 msgid "Save Markdown File"
 msgstr "Spara markdown-fil"
 
@@ -523,163 +524,163 @@ msgstr "Ersätt"
 msgid "Replace All"
 msgstr "Ersätt alla"
 
-#: data/ui/Shortcuts.ui:11
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:6
+msgctxt "shortcuts dialog"
 msgid "General"
 msgstr "Allmänt"
 
-#: data/ui/Shortcuts.ui:14
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:9
+msgctxt "shortcuts dialog"
 msgid "New"
 msgstr "Nytt"
 
-#: data/ui/Shortcuts.ui:20
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:15
+msgctxt "shortcuts dialog"
 msgid "Open"
 msgstr "Öppna"
 
-#: data/ui/Shortcuts.ui:26
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:21
+msgctxt "shortcuts dialog"
 msgid "Save"
 msgstr "Spara"
 
-#: data/ui/Shortcuts.ui:32
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:27
+msgctxt "shortcuts dialog"
 msgid "Save As"
 msgstr "Spara som"
 
-#: data/ui/Shortcuts.ui:38
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:33
+msgctxt "shortcuts dialog"
 msgid "Close Document"
 msgstr "Stäng dokument"
 
-#: data/ui/Shortcuts.ui:44
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:39
+msgctxt "shortcuts dialog"
 msgid "Show Preferences"
 msgstr "Visa inställningar"
 
-#: data/ui/Shortcuts.ui:50
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:45
+msgctxt "shortcuts dialog"
 msgid "Keyboard Shortcuts"
 msgstr "Tangentbordsgenvägar"
 
-#: data/ui/Shortcuts.ui:56
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:51
+msgctxt "shortcuts dialog"
 msgid "Quit Application"
 msgstr "Avsluta programmet"
 
-#: data/ui/Shortcuts.ui:64
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:59
+msgctxt "shortcuts dialog"
 msgid "Modes"
 msgstr "Lägen"
 
-#: data/ui/Shortcuts.ui:67
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:62
+msgctxt "shortcuts dialog"
 msgid "Focus Mode"
 msgstr "Fokusläge"
 
-#: data/ui/Shortcuts.ui:73
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:68
+msgctxt "shortcuts dialog"
 msgid "Hemingway Mode"
 msgstr "Hemingway-läge"
 
-#: data/ui/Shortcuts.ui:80
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:74
+msgctxt "shortcuts dialog"
 msgid "Preview"
 msgstr "Förhandsgranska"
 
-#: data/ui/Shortcuts.ui:86
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:80
+msgctxt "shortcuts dialog"
 msgid "Fullscreen"
 msgstr "Helskärm"
 
-#: data/ui/Shortcuts.ui:94 data/ui/Shortcuts.ui:97
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:88 data/ui/Shortcuts.ui:91
+msgctxt "shortcuts dialog"
 msgid "Find"
 msgstr "Sök"
 
-#: data/ui/Shortcuts.ui:103
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:97
+msgctxt "shortcuts dialog"
 msgid "Find and Replace"
 msgstr "Sök och ersätt"
 
-#: data/ui/Shortcuts.ui:111
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:105
+msgctxt "shortcuts dialog"
 msgid "Markdown"
 msgstr "Markdown"
 
-#: data/ui/Shortcuts.ui:114
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:108
+msgctxt "shortcuts dialog"
 msgid "Separator"
 msgstr "Avdelare"
 
-#: data/ui/Shortcuts.ui:120
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:114
+msgctxt "shortcuts dialog"
 msgid "Header"
 msgstr "Rubrik"
 
-#: data/ui/Shortcuts.ui:126
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:120
+msgctxt "shortcuts dialog"
 msgid "List Item"
 msgstr "Listobjekt"
 
-#: data/ui/Shortcuts.ui:133
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:126
+msgctxt "shortcuts dialog"
 msgid "Italic"
 msgstr "Kursiv"
 
-#: data/ui/Shortcuts.ui:139
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:132
+msgctxt "shortcuts dialog"
 msgid "Bold"
 msgstr "Fet"
 
-#: data/ui/Shortcuts.ui:145
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:138
+msgctxt "shortcuts dialog"
 msgid "Strikeout"
 msgstr "Överstruken"
 
-#: data/ui/Shortcuts.ui:153
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:146
+msgctxt "shortcuts dialog"
 msgid "Copy and Paste"
 msgstr "Kopiera och klistra in"
 
-#: data/ui/Shortcuts.ui:156
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:149
+msgctxt "shortcuts dialog"
 msgid "Copy"
 msgstr "Kopiera"
 
-#: data/ui/Shortcuts.ui:162
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:155
+msgctxt "shortcuts dialog"
 msgid "Cut"
 msgstr "Klipp ut"
 
-#: data/ui/Shortcuts.ui:168
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:161
+msgctxt "shortcuts dialog"
 msgid "Paste"
 msgstr "Klistra in"
 
-#: data/ui/Shortcuts.ui:176
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:169
+msgctxt "shortcuts dialog"
 msgid "Undo and Redo"
-msgstr "Ångra och upprepa"
+msgstr "Ångra och gör om"
 
-#: data/ui/Shortcuts.ui:179
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:172
+msgctxt "shortcuts dialog"
 msgid "Undo Previous Command"
 msgstr "Ångra föregående kommando"
 
-#: data/ui/Shortcuts.ui:185
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:178
+msgctxt "shortcuts dialog"
 msgid "Redo Previous Command"
-msgstr "Upprepa föregående kommando"
+msgstr "Gör om föregående kommando"
 
-#: data/ui/Shortcuts.ui:193
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:186
+msgctxt "shortcuts dialog"
 msgid "Selection"
-msgstr "Markerat"
+msgstr "Markering"
 
-#: data/ui/Shortcuts.ui:196
-msgctxt "shortcut window"
+#: data/ui/Shortcuts.ui:189
+msgctxt "shortcuts dialog"
 msgid "Select All Text"
 msgstr "Markera all text"
 
@@ -847,15 +848,15 @@ msgstr "Filen har ändrats på disk"
 msgid "The file has been changed by another program"
 msgstr "Filen har ändrats av ett annat program"
 
-#: data/ui/Window.ui:214
+#: data/ui/Window.ui:218
 msgid "_Discard Changes and Reload"
 msgstr "_Förkasta ändringar och läs in på nytt"
 
-#: apostrophe/application.py:303
+#: apostrophe/application.py:305
 msgid "Donate"
 msgstr "Donera"
 
-#: apostrophe/application.py:304
+#: apostrophe/application.py:306
 msgid "Translations"
 msgstr "Översättningar"
 
@@ -873,8 +874,8 @@ msgid "Export to %s"
 msgstr "Exportera till %s"
 
 #: apostrophe/export_dialog.py:122 apostrophe/export_dialog.py:324
-#: apostrophe/export_dialog.py:329 apostrophe/main_window.py:446
-#: apostrophe/main_window.py:532 apostrophe/main_window.py:655
+#: apostrophe/export_dialog.py:329 apostrophe/main_window.py:447
+#: apostrophe/main_window.py:533 apostrophe/main_window.py:656
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -883,6 +884,7 @@ msgid "Apostrophe experienced an error while trying to export:"
 msgstr "Apostrophe råkade ut för ett fel vid försök att exportera:"
 
 #: apostrophe/export_dialog.py:230
+#, python-brace-format
 msgid "Export to {}"
 msgstr "Exportera till {}"
 
@@ -950,31 +952,31 @@ msgstr "Text kan inte tas bort i Hemingway-läge"
 msgid "Tell me more"
 msgstr "Berätta mer"
 
-#: apostrophe/main_window.py:442
+#: apostrophe/main_window.py:443
 msgid "Save your File"
 msgstr "Spara din fil"
 
-#: apostrophe/main_window.py:445 apostrophe/main_window.py:657
+#: apostrophe/main_window.py:446 apostrophe/main_window.py:658
 msgid "Save"
 msgstr "Spara"
 
-#: apostrophe/main_window.py:521
+#: apostrophe/main_window.py:522
 msgid "Markdown Files"
 msgstr "Markdown-filer"
 
-#: apostrophe/main_window.py:525
+#: apostrophe/main_window.py:526
 msgid "Plain Text Files"
 msgstr "Oformaterade text-filer"
 
-#: apostrophe/main_window.py:528
+#: apostrophe/main_window.py:529
 msgid "Open a .md file"
 msgstr "Öppna en .md-fil"
 
-#: apostrophe/main_window.py:531
+#: apostrophe/main_window.py:532
 msgid "Open"
 msgstr "Öppna"
 
-#: apostrophe/main_window.py:609
+#: apostrophe/main_window.py:610
 #, python-brace-format
 msgid ""
 "Failed to detect encoding for file:\n"
@@ -989,11 +991,11 @@ msgstr ""
 "Felet var:\n"
 "{err_msg}"
 
-#: apostrophe/main_window.py:649
+#: apostrophe/main_window.py:650
 msgid "Save Changes?"
 msgstr "Spara ändringar?"
 
-#: apostrophe/main_window.py:650
+#: apostrophe/main_window.py:651
 #, python-format
 msgid ""
 "“%s” contains unsaved changes. If you don’t save, all your changes will be "
@@ -1002,7 +1004,7 @@ msgstr ""
 "”%s” innehåller osparade ändringar. Om du inte sparar kommer dina ändringar "
 "förloras permanent."
 
-#: apostrophe/main_window.py:656
+#: apostrophe/main_window.py:657
 msgid "Discard"
 msgstr "Förkasta"
 
@@ -1035,50 +1037,60 @@ msgid "Windowed"
 msgstr "Fönsterläge"
 
 #: apostrophe/stats_handler.py:122
+#, python-brace-format
 msgid "{:n} of {:n} Characters"
 msgstr "{:n} av {:n} tecken"
 
 #: apostrophe/stats_handler.py:124
+#, python-brace-format
 msgid "{:n} Character"
 msgid_plural "{:n} Characters"
 msgstr[0] "{:n} tecken"
 msgstr[1] "{:n} tecken"
 
 #: apostrophe/stats_handler.py:127
+#, python-brace-format
 msgid "{:n} of {:n} Words"
 msgstr "{:n} av {:n} ord"
 
 #: apostrophe/stats_handler.py:129
+#, python-brace-format
 msgid "{:n} Word"
 msgid_plural "{:n} Words"
 msgstr[0] "{:n} ord"
 msgstr[1] "{:n} ord"
 
 #: apostrophe/stats_handler.py:132
+#, python-brace-format
 msgid "{:n} of {:n} Sentences"
 msgstr "{:n} av {:n} meningar"
 
 #: apostrophe/stats_handler.py:134
+#, python-brace-format
 msgid "{:n} Sentence"
 msgid_plural "{:n} Sentences"
 msgstr[0] "{:n} mening"
 msgstr[1] "{:n} meningar"
 
 #: apostrophe/stats_handler.py:137
+#, python-brace-format
 msgid "{:n} of {:n} Paragraphs"
 msgstr "{:n} av {:n} stycken"
 
 #: apostrophe/stats_handler.py:139
+#, python-brace-format
 msgid "{:n} Paragraph"
 msgid_plural "{:n} Paragraphs"
 msgstr[0] "{:n} stycke"
 msgstr[1] "{:n} stycken"
 
 #: apostrophe/stats_handler.py:142
+#, python-brace-format
 msgid "{:d}:{:02d}:{:02d} of {:d}:{:02d}:{:02d} Read Time"
 msgstr "{:d}:{:02d}:{:02d} av {:d}:{:02d}:{:02d} lästid"
 
 #: apostrophe/stats_handler.py:144
+#, python-brace-format
 msgid "{:d}:{:02d}:{:02d} Read Time"
 msgstr "{:d}:{:02d}:{:02d} lästid"
 
@@ -1141,6 +1153,38 @@ msgstr ""
 msgid "web page"
 msgstr "webbplats"
 
+#~ msgctxt "shortcut window"
+#~ msgid "New"
+#~ msgstr "Nytt"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Open"
+#~ msgstr "Öppna"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save"
+#~ msgstr "Spara"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Hemingway Mode"
+#~ msgstr "Hemingway-läge"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preview"
+#~ msgstr "Förhandsgranska"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Header"
+#~ msgstr "Rubrik"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Italic"
+#~ msgstr "Kursiv"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Bold"
+#~ msgstr "Fet"
+
 #~ msgid "Show More Controls"
 #~ msgstr "Visa fler kontroller"
 
@@ -1149,9 +1193,6 @@ msgstr "webbplats"
 
 #~ msgid "Open file paths of the current session"
 #~ msgstr "Öppna filsökvägar för aktuell session"
-
-#~ msgid "New"
-#~ msgstr "Nytt"
 
 #~ msgid "_Find"
 #~ msgstr "_Sök"
