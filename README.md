@@ -81,7 +81,18 @@ Or a local version which runs from the source tree
 $ ./builddir/local-apostrophe
 ```
 
+### Building with Pixi on macOS
 
+```bash
+$ pixi run start
+```
+
+The first run builds the currently-unpackaged libspelling dependency. A
+rattler-build recipe for it is in `recipes/libspelling`; build the package with
+`pixi run build-libspelling-package`.
+
+WebKitGTK does not support macOS, so document and inline previews are disabled
+there. The editor, spell checking, and Pandoc-based features remain available.
 
 ### Building a flatpak package
 

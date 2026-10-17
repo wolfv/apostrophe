@@ -31,7 +31,29 @@ from apostrophe.export_dialog import AdvancedExportDialog, ExportDialog
 from apostrophe.headerbars import BaseHeaderbar
 from apostrophe.helpers import App, bind_enum
 from apostrophe.panels import ApostrophePanels
-from apostrophe.preview_handler import PreviewHandler
+try:
+    gi.require_version('WebKit', '6.0')
+except ValueError:  # WebKitGTK is not available on macOS.
+    WEBKIT_AVAILABLE = False
+
+    class PreviewHandler:
+        def __init__(self, *_args):
+            pass
+
+        def show(self):
+            pass
+
+        def hide(self):
+            pass
+
+        def reload(self, **_kwargs):
+            pass
+
+        def refresh_preview(self):
+            pass
+else:
+    from apostrophe.preview_handler import PreviewHandler
+    WEBKIT_AVAILABLE = True
 from apostrophe.preview_security import PreviewSecurity
 from apostrophe.search_and_replace import ApostropheSearchBar
 from apostrophe.settings import Settings
@@ -189,6 +211,7 @@ class MainWindow(Adw.ApplicationWindow):
         self.add_action(action)
 
         action = Gio.PropertyAction.new("preview", self, "preview")
+        action.set_enabled(WEBKIT_AVAILABLE)
         self.add_action(action)
         self.connect("notify::preview", self.toggle_preview)
 
@@ -295,8 +318,9 @@ class MainWindow(Adw.ApplicationWindow):
             Gio.SettingsBindFlags.DEFAULT|Gio.SettingsBindFlags.GET_NO_CHANGES)
         bind_enum(self.settings, "preview-mode", self, "preview-layout",
             Gio.SettingsBindFlags.DEFAULT|Gio.SettingsBindFlags.GET_NO_CHANGES)
-        self.settings.bind("preview-active", self, "preview",
-            Gio.SettingsBindFlags.DEFAULT|Gio.SettingsBindFlags.GET_NO_CHANGES)
+        if WEBKIT_AVAILABLE:
+            self.settings.bind("preview-active", self, "preview",
+                Gio.SettingsBindFlags.DEFAULT|Gio.SettingsBindFlags.GET_NO_CHANGES)
 
         self.new_document()
 

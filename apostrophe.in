@@ -22,6 +22,7 @@ import os
 
 import gettext
 import locale
+import types
 
 _LOCAL = @LOCAL_BUILD@
 
@@ -35,6 +36,10 @@ if _LOCAL:
 from gi.repository import Gio
 
 import apostrophe
+
+if _LOCAL:
+    sys.modules['apostrophe.config'] = types.SimpleNamespace(
+        PKGDATA_DIR='@PKGDATA_DIR@', PROFILE='@PROFILE@', VERSION='@VERSION@')
 
 localedir = '@LOCALE_DIR@'
 pkgdatadir = '@PKGDATA_DIR@'

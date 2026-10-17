@@ -21,7 +21,12 @@ from os.path import basename
 import gi
 
 from apostrophe.helpers import user_action
-from apostrophe.inline_preview import InlinePreview
+try:
+    gi.require_version('WebKit', '6.0')
+except ValueError:  # WebKitGTK is not available on macOS.
+    InlinePreview = None
+else:
+    from apostrophe.inline_preview import InlinePreview
 from apostrophe.settings import Settings
 from apostrophe.text_view_format_inserter import FormatInserter
 from apostrophe.text_view_markup_handler import MarkupHandler
@@ -110,22 +115,21 @@ class ApostropheTextView(GtkSource.View):
                            "line_chars", Gio.SettingsBindFlags.GET)
         
         # Preview popover
-        self.preview_popover = InlinePreview(self)
-        action = Gio.SimpleAction.new("open_inline_preview")
-        action.connect("activate", self.preview_popover.open_popover)
-
-        group = Gio.SimpleActionGroup.new()
-        group.add_action(action)
-
-        self.insert_action_group("text", group)
-        
-        peek_menu = Gio.Menu()
-        peek_item = Gio.MenuItem.new("Peek", 'text.open_inline_preview')
-        peek_menu.append_item(peek_item)
+        self.preview_popover = InlinePreview(self) if InlinePreview else None
 
         # Context menu
         extra_menu = Gio.Menu()
-        extra_menu.append_section(None, peek_menu)
+        if self.preview_popover:
+            action = Gio.SimpleAction.new("open_inline_preview")
+            action.connect("activate", self.preview_popover.open_popover)
+            group = Gio.SimpleActionGroup.new()
+            group.add_action(action)
+            self.insert_action_group("text", group)
+
+            peek_menu = Gio.Menu()
+            peek_item = Gio.MenuItem.new("Peek", 'text.open_inline_preview')
+            peek_menu.append_item(peek_item)
+            extra_menu.append_section(None, peek_menu)
         extra_menu.append_section(None, spellchecking_menu)
 
         self.set_extra_menu(extra_menu)
@@ -286,7 +290,7 @@ class ApostropheTextView(GtkSource.View):
         if found and not self.buffer.get_has_selection():
             self.buffer.place_cursor(iter)
 
-        if event.get_modifier_state() == Gdk.ModifierType.CONTROL_MASK and not event.triggers_context_menu():
+        if self.preview_popover and event.get_modifier_state() == Gdk.ModifierType.CONTROL_MASK and not event.triggers_context_menu():
             self.preview_popover.open_popover()
 
         return False
@@ -327,7 +331,8 @@ class ApostropheTextView(GtkSource.View):
         self.markup.update_margins_indents()
         self.queue_draw()
 
-        self.preview_popover.popover.present()
+        if self.preview_popover:
+            self.preview_popover.popover.present()
 
     @Gtk.Template.Callback()
     def _on_spellcheck_update(self, *args, **kwargs):

@@ -107,6 +107,7 @@ local_config.set('LOCALE_DIR', join_paths(datadir, 'locale'))
 local_config.set('PYTHON_DIR', meson.source_root())
 local_config.set('PROFILE', profile)
 local_config.set('APP_ID', application_id)
+local_config.set('VERSION', meson.project_version())
 
 local_config.set('SCHEMAS_DIR', join_paths(meson.build_root(), 'data'))
 local_config.set('LOCAL_BUILD', 'True')
